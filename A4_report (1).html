@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Vis & Society Assignment 3</title>
+    <link
+      rel="stylesheet"
+      href="https://vis-society.github.io/assignments/report.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <small>Assignment 4</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
+
+      <p><strong>Unyime Usua</strong> — <em>unyime@mit.edu</em></p>
+    </header>
+
+    <main>
+      <h2>
+        Proposition: A small group of officers accumulate the majority of
+        complaints, yet their allegations are the least likely to be
+        substantiated.
+      </h2>
+
+      <section>
+        <h3>FOR the Proposition</h3>
+
+        <figure>
+          <img src="Positive Example.png" alt="positive example" />
+          <figcaption>
+            Which Officers are Receiving the Highest Rate of Substantiated
+            (Considered Proven) Allegations. Count of Allegation vs. average of
+            IsSUB. Details are shown for Unique Mos Id.
+          </figcaption>
+        </figure>
+
+        <p>
+          Notes: IsSUB is a calculated field defined as such:<br />
+          IF STARTSWITH([Board Disposition], "Substantiated") THEN 1 ELSE 0 END
+        </p>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <strong>D1: Downward trend line</strong>
+            <ul>
+              <li>Score: 1.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                The trend line is a very persuasive element of the
+                visualization. My goal when adding this was to show to the
+                viewer that there is a clear negative relationship between
+                number of allegations and substantiation rate. This makes it
+                visually obvious that officers who accumulate more complaints
+                are less likely to have them proven.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                This worked well because the data naturally supports a downward
+                trend. I didn't need to do any manipulation as I relied on the
+                inherent data trends. However, this trend line is somewhat hard
+                to see due to the larger cluster of data points. Maybe it could
+                benefit from being placed in a more obvious way.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                Tableau had many options for different kinds of trend lines such
+                as logarithmic, exponential and power. Despite the data having
+                somewhat of a curve, I still went with just a linear because the
+                overall goal of this line was just to show the general direction
+                the data was going in. A linear line clearly communicates this
+                without over complicating.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D2: Including all officers with no minimum allegation
+              filter</strong
+            >
+            <ul>
+              <li>Score: -0.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                By including officers with very few allegations (1-5), the
+                upper-left corner gets packed with high-substantiation-rate
+                dots. Officers with just 1 or 2 allegations can easily land at
+                1.0 or 0.5, which inflates the visual impression that
+                low-allegation officers have high rates and exaggerates the
+                steepness of the downward trend.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It worked well for persuasion as many of the officers with just
+                a few allegations were substantiated, but not filtering such
+                officers out might have contributed to some unreliable rates.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered filtering to a minimum of 5 or 10 allegations for
+                more honest representation, but keeping all officers in made the
+                downward slope more dramatic and the upper-left cluster more
+                dense. Additionally, I don't have the knowledge about this
+                dataset to determine whether these cases are worth filtering in
+                the first place.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D3: Annotating Officer 18530 (73 allegations, 0.3151 rate) and
+              Officer 25470 (9 allegations, 0.8889 rate)</strong
+            >
+            <ul>
+              <li>Score: 1.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I chose to highlight specific officers to make the current
+                patterns in the data appear more concrete and personal. The
+                viewer sees "73 complaints and only 31% proven" next to "9
+                complaints and 89% proven" and is able to more-so grasp the
+                disparity. It shows that these are actual individual cases that
+                represent this data.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It worked well because the two officers sit at opposite ends of
+                the chart and thus it tells a contrasting narrative. My
+                proposition now has support from real examples rather than just
+                purely on the trend. What didn't work well is that these
+                annotations only depict two individuals at both ends of the
+                spectrum. It's clearly cherry picking these extreme examples.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered annotating different officers but chose these two
+                because they represent the most dramatic contrast. With one in
+                the upper left with few allegations and a high rate, one in the
+                lower-right with many allegations and a low rate.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D4: Title framing "Which Officers are Receiving the Highest Rate
+              of Substantiated (Considered Proven) Allegations"</strong
+            >
+            <ul>
+              <li>Score: 2</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                The title of every visualization is what first guides the
+                viewers' understanding. For this visualization, I chose to frame
+                the title as a question, thus prompting the reader to search for
+                an answer. In the chart they start immediately looking for the
+                answer and it reinforces the persuasive message. I added
+                "Considered Proven" in parentheses to remind the reader that
+                substantiation means verified misconduct.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It works well because it guides interpretation without being
+                overtly biased. The parenthetical adds gravity to the word
+                "substantiated" for readers unfamiliar with the term. Although
+                the title does get the user searching for an answer, maybe the
+                part about 'A small group of officers" as in the proposition
+                could be communicated clearly in the title to emphasize this
+                aspect of the proposition.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered a neutral title like "Substantiation Rate by
+                Allegation Count" but that doesn't lead the reader toward a
+                conclusion the way a question does.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>D5: Using person-shaped marks instead of circles</strong>
+            <ul>
+              <li>Score: 0.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I chose the human figure icons instead of just circles to remind
+                the reader that each dot represents a real officer with real
+                allegations against them. This adds emotional weight and overall
+                raises the stakes of the pattern being shown.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It worked well because the icons are distinct and recognizable
+                even at small sizes. However, they do create more visual clutter
+                than circles would, especially in dense areas of the chart. Thus
+                it gets somewhat difficult to discern just how many people are
+                located at a particular datapoint.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered using standard circles as stated before, which
+                would be cleaner and reduce overlap, but the person shapes add a
+                humanizing layer of meaning that supports the persuasive goal of
+                making the reader care about the pattern. In addition, I
+                considered not measuring individual people at all and rather
+                just showing the trends potentially with a line. But I felt like
+                this representation was able to better communicate the
+                proposition.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>AGAINST the Proposition</h3>
+
+        <figure>
+          <img src="fbce6866-1.png" alt="Negative Example" />
+          <figcaption>
+            High-Allegation Officers Are Substantiated Earlier Than Average.
+            Depicted: Officers with high allegation rates (30-75 Allegations)
+            and amount of time it took till they were first substantiated.
+          </figcaption>
+        </figure>
+
+        <p>
+          Note:<br />
+          The follow calculated fields were used:
+        </p>
+        <ul>
+          <li>
+            Overall Avg Time to Sub<br />
+            {FIXED : AVG({FIXED [Unique Mos Id] : DATEDIFF('month', MIN([Date
+            Received]), MIN([Substantiated Date]))})}
+          </li>
+          <li>
+            Time Bin:<br />
+            INT([Time to First Substantiation] / 12) * 12
+          </li>
+        </ul>
+
+        <p>Design Decisions and Rationale:</p>
+
+        <ul>
+          <li>
+            <strong
+              >D1: Filtering to only high-allegation officers (30-75
+              allegations)</strong
+            >
+            <ul>
+              <li>Score: -2</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                In this visualization I am considering those with high
+                allegations as 30-75. In reality I just filtered out those with
+                a very high number of allegations as they actually pulled the
+                average further to the right. By filtering only officers with
+                30-75 allegations, I removed the majority of officers from the
+                dataset who would have dragged the average. This lets me compare
+                a cherry picked subset against the full population average to
+                make it look like high-allegation officers are substantiated
+                faster.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                This worked well because readers see the green line sitting to
+                the left of the red line and immediately conclude that the
+                system is actually working well and counters the proposition by
+                showing that people with many allegations are actually being
+                substantiated faster. What didn't work as well is the footnote
+                at the bottom which reveals the filter.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered showing all officers on the same chart, but then
+                there would be no meaningful difference between the two
+                averages. The filter is what creates the persuasive gap between
+                the two reference lines.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D2: Two reference lines comparing high-allegation officers vs.
+              all officers</strong
+            >
+            <ul>
+              <li>Score: -0.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I placed two vertical reference lines. One line is for the
+                filtered group and one line is for all officers. This design
+                choice allows the viewer to be able to directly compare these
+                values just by looking at the visual. The ~6 month gap between
+                the lines visually argues that high-allegation officers get
+                substantiated sooner than average.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                The visual comparison is effective as viewers don't need to
+                think hard to get the message. However, the gap is only about 6
+                months, which is not that dramatic. I had to rely on the
+                annotation calling out "~6 months apart" to make sure readers
+                noticed.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered using only one reference line, but having both
+                creates the comparison that drives the argument. Without the
+                "all officers" line, there would be no benchmark to make the
+                high-allegation group look faster.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D3: Title framing "High-Allegation Officers Are Substantiated
+              Earlier Than Average"</strong
+            >
+            <ul>
+              <li>Score: -1</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I chose a title that states my desired conclusion as a fact
+                rather than letting the reader interpret the data. This forces
+                the reader to see the chart as confirmation of the claim rather
+                than exploring it with an open mind.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It worked well because readers tend to trust titles and use them
+                to guide their interpretation. The word "earlier" has a positive
+                connotation that makes it sound like the system is working. What
+                doesn't work well is that the title along with the description
+                might be too important and it may be harder to get a message
+                from the visualization without it.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered a neutral title like "Time to First Substantiation
+                for High-Allegation Officers" but that wouldn't push the reader
+                toward the conclusion I wanted. However, this title does the
+                persuasive work better.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D4: Histogram with person-shaped marks showing distribution
+              skewed left</strong
+            >
+            <ul>
+              <li>Score: 0.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I used a histogram so the reader can see that the bulk of
+                high-allegation officers cluster on the left side of the chart.
+                This supports the counter proposition because it means that most
+                of them were substantiated relatively quickly. The tall bars
+                near 0 months make it look like the system acts fast on these
+                officers with repeat allegations.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                The left-skewed shape supports the narrative well. The
+                person-shaped marks again, as used in the first visualization,
+                humanize the data. What didn't work as well is that some
+                officers appear at 60-75 months, which undermines the "fast
+                accountability" message, but the density on the left draws
+                attention away from those outliers.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered a scatter plot like the first visualization, but a
+                histogram better emphasizes the concentration of officers on the
+                left side. A scatter plot would have spread the data out and
+                made the skew less obvious. I tried it but it wasn't as
+                effective or organized.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong
+              >D5: X-axis label — "Time (Months) Until Officer was First Held
+              Accountable"</strong
+            >
+            <ul>
+              <li>Score: -1.5</li>
+              <li>
+                <strong
+                  >How does this decision help make your visualization
+                  persuasive?</strong
+                ><br />
+                I chose the phrase "Held Accountable" instead of "Substantiated"
+                because it carries a stronger moral connotation. It frames the
+                substantiation as the system actively holding officers
+                responsible rather than a neutral bureaucratic outcome.
+              </li>
+              <li>
+                <strong>What worked well, and what didn't?</strong><br />
+                It worked well because "held accountable" is emotionally loaded
+                language that reinforces the narrative that the system is
+                functioning. It sounds like justice is being served. Most
+                readers accept axis labels without scrutiny as it is typically
+                just supposed to say what the data is. However, what doesn't
+                work is that it may not be the correct technical language to use
+                for this situation as substantiated may not necessarily mean
+                held accountable exactly.
+              </li>
+              <li>
+                <strong
+                  >What other alternatives did you consider, and why did you
+                  settle on this one?</strong
+                ><br />
+                I considered using "Time to First Substantiation" which is more
+                technically accurate, but it's dry and doesn't carry the same
+                persuasive weight. "Held Accountable" does rhetorical work that
+                a neutral label wouldn't.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Final Reflection</h2>
+
+        <p>
+          When designing these two visualizations, it showed me how thin the
+          line between persuasion and deception really is. The first
+          visualization was straightforward because after exploring the data, I
+          saw that the data naturally supported the downward trend. I just
+          needed a trend line and some annotations to make the pattern clear.
+          The second was much harder because I was arguing against what the data
+          naturally shows, which forced me to rely on filtering, loaded
+          language, and curated comparisons to build a convincing narrative.
+          What surprised me most was how easy it was to make the second chart
+          look just as credible as the first, even though it's built on much
+          shakier ground.
+        </p>
+
+        <p>
+          I believe that ethical analysis and visualization means letting the
+          data lead the narrative rather than forcing a narrative onto the data.
+          If I had to draw a line between acceptable persuasion and misleading
+          choices, it would be difficult. A visualization element is misleading
+          if it purposefully pushes a narrative that is not necessarily correct.
+          It's more so based on intentions of harm. Therefore, it can be very
+          difficult to detect at times. Providing evidence for a claim is
+          something that is necessary but there are important considerations
+          that an author needs to consider in order to prevent misinformation;
+          however, if an author's intention is to do harm, it is not immediately
+          clear. This is why it is very crucial for everyone to have some level
+          of investigation skills and the ability to question their
+          understanding.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
